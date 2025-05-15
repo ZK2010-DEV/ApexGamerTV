@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OUR SHOW</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffc3;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background: #222;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #00ffc3;
+    }
+
+    .watch-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00ffc3;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .watch-button:hover {
+      background: #00c0a0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>WATCH OUR SHOW</header>
+
+  <div class="container">
+
+    <!-- TV Show Card Example -->
+    <div class="card">
+      <img src="https://i9.ytimg.com/vi/-hNwOPJhXqM/sddefault.jpg?v=6824664f&sqp=CNDckcEG&rs=AOn4CLDMiexSgjgBQyyXSUy8DDit2JGNWA" alt="TV Show Poster">
+      <div class="card-content">
+        <div class="card-title">STAGE TOONS EP 1 | FIRST EVER ANIMATED STAND-UP COMEDY SHOW</div>
+        <a href="https://www.youtube.com/watch?v=-hNwOPJhXqM" target="_blank" class="watch-button">WATCH NOW</a>
+      </div>
+    </div>
+
+
+    <!-- Add More TV Show Cards Below -->
+    <!-- Copy and paste the <div class="card">...</div> block -->
+
+  </div>
+
+</body>
+</html>
+
