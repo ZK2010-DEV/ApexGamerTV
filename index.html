@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Gamer TV - The Ultimate Gaming Universe Awaits You">
+    <meta name="keywords" content="Apex Gamer TV, gaming, YouTube, gaming community, gameplays">
+    <meta name="author" content="Apex Gamer TV">
+    <meta name="robots" content="index, follow">
+    <title>Apex Gamer TV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Favicon.png" type="image/png">
+ 
+<style>
+     
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #000000;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+    /* 🌌 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🌃 Cyberpunk Theme */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 0 0 20px #ff00ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #00ffff;
+}
+
+/* 🚀 Sections */
+section {
+    padding: 100px 5%;
+}
+
+h1, h2, h3 {
+    text-shadow: 0 0 15px #00ffff;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+h1 span {
+    color: #ff00ff;
+}
+
+h1:hover, h2:hover, h3:hover {
+    text-shadow: 0 0 30px #ff00ff;
+    color: #00ffff;
+}
+
+/* 🌀 Button Styling */
+.button-wrapper {
+    margin-top: 80px;
+}
+
+.neon-btn {
+    background: transparent;
+    color: #00ffff;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: 2px solid #00ffff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #00ffff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.neon-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #ff00ff;
+}
+
+/* 🎥 Video Grid */
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background: #240046;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 15px;
+}
+
+/* 🌌 Floating Particles */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none; /* Prevents interference with clicks */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .video-grid {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+    }
+}
+
+/* 🌀 Footer */
+footer {
+    background: #11002a;
+    padding: 20px;
+    text-align: center;
+}
+
+  </style>
+</head>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/680e98c9a90978190c0fec9b/1ipsg9lbi';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<body>
+
+    <!-- Floating Particles Background -->
+    <canvas id="particles"></canvas>
+    <body>
+  <!-- Bubbles background -->
+  <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="bubble" style="left: 20%; animation-delay: 2s;"></div>
+  <div class="bubble" style="left: 30%; animation-delay: 4s;"></div>
+  <div class="bubble" style="left: 40%; animation-delay: 6s;"></div>
+  <div class="bubble" style="left: 50%; animation-delay: 8s;"></div>
+  <div class="bubble" style="left: 60%; animation-delay: 1s;"></div>
+  <div class="bubble" style="left: 70%; animation-delay: 3s;"></div>
+  <div class="bubble" style="left: 80%; animation-delay: 5s;"></div>
+  <div class="bubble" style="left: 90%; animation-delay: 7s;"></div>
+
+  <!-- Your normal website content -->
+  <div style="position: relative; z-index: 1; color: white; padding: 20px;">
+    <h1>Welcome to ApexGamerTV's Official Website !</h1>
+    <p>A Thriving Gaming Multiverse !</p>
+  </div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">🎮 Apex Gamer TV 🎮</div>
+        <nav>
+            <ul>
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="Submit Your Content Here.html">Submit Your Content</a></li>
+        <li><a href="tvshow.html">Watch STAGE TOONS</a></li>
+  </ul>
+  <div class="burger" id="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</nav>
+
+</ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <audio id="background-music" autoplay loop>
+  <source src="your-music-file.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+    <section id="home">
+        <div class="intro">
+            <h1>Welcome to <span>Apex Gamer TV</span></h1>
+            <p>Your ultimate gateway to the gaming multiverse.</p>
+            <div class="button-wrapper">
+                <a href="#videos" class="neon-btn">🚀 Dive Into Adventure 🚀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2>🔥 Featured Gameplay 🔥</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/kqvvhp2VPec" allowfullscreen></iframe>
+                <h3>GTA SA MUST NEEDED MODS</h3>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/KyMeAGIFlyM" allowfullscreen></iframe>
+                <h3>GTA 5 Part#1</h3>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/bd9a5v1d4Ps" allowfullscreen></iframe>
+                <h3>Call of Duty III Movie</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community">
+        <h2>💥 Join the Apex Nation 💥</h2>
+    <a href="discord.gg/eGwP2GuTVM" target="_blank" class="neon-btn">🎉 Join Our Discord 🎉</a>
+
+    </section>
+    <button data-feedback-fish>
+  Feedback
+</button>
+<button 
+  data-feedback-fish
+  data-feedback-fish-userid="..."
+>
+  Feedback
+</button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Apex Gamer TV. Stay Legendary.</p>
+    </footer>
+<script src="https://apexgamertv.involve.me/embed?type=popup"></script>
+
+<script>
+    involvemeEmbedPopup.createTriggerEvent({
+        projectUrl: "apexgamertv-q-a-form",
+        organizationUrl: "https://apexgamertv.involve.me",
+        embedMode: "popup",
+        triggerEvent: "timer",
+        popupSize: "large",
+        triggerTimer: "1",
+        loadColor: "#133E82FF",
+    })
+</script>
+    <script src="scripts.js"></script>
+    <script defer src="https://feedback.fish/ff.js?pid=d27c7275b5bdd5"></script>
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="_s10x4o0eajTVXHc5maCD";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+<script>
+// Toggle the visibility of the dropdown menu
+function toggleMenu() {
+  const menu = document.getElementById('dropdownMenu');
+  menu.classList.toggle('show');
+}
+
+// Close the dropdown menu when clicking outside
+window.addEventListener('click', function(event) {
+  const menu = document.getElementById('dropdownMenu');
+  const button = document.querySelector('.menu-button');
+  if (!button.contains(event.target) && !menu.contains(event.target)) {
+    menu.classList.remove('show');
+  }
+});
+
+</script>
+
+</body>
+</html>
