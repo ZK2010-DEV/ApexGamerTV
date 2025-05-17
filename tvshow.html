@@ -1,104 +1,354 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OUR SHOW</title>
+  <title>STAGE TOONS | Show Episodes</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #fff;
+      background-color: #0f0f0f;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
     }
-
     header {
-      background: #1e1e1e;
-      padding: 20px;
-      text-align: center;
-      font-size: 2rem;
+      background: #202020;
+      padding: 16px;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      border-bottom: 2px solid #333;
+    }
+    header .logo {
+      color: #ff0000;
       font-weight: bold;
-      color: #00ffc3;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
+    .top-bar {
+      display: flex;
+      gap: 10px;
     }
-
-    .card {
-      background: #222;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
+    .top-bar input {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      width: 300px;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
+    .top-bar select {
+      padding: 8px;
+      background: #202020;
+      color: white;
+      border-radius: 6px;
+      border: 1px solid #444;
     }
-
-    .card img {
-      width: 100%;
-      height: auto;
+    .main {
+      display: flex;
     }
-
-    .card-content {
-      padding: 15px;
+    nav {
+      width: 200px;
+      background: #181818;
+      height: 100vh;
+      padding: 10px;
+      border-right: 1px solid #333;
     }
-
-    .card-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #00ffc3;
+    nav ul {
+      list-style: none;
+      padding: 0;
     }
-
-    .watch-button {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #00ffc3;
-      color: #000;
+    nav li {
+      padding: 10px;
+      cursor: pointer;
       border-radius: 8px;
-      text-decoration: none;
+    }
+    nav li:hover {
+      background: #303030;
+    }
+    .container {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .episode {
+      background-color: #181818;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .episode:hover {
+      transform: scale(1.02);
+    }
+    iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+    .title {
+      padding: 10px;
+      font-size: 1rem;
       font-weight: bold;
-      transition: background 0.3s ease;
     }
-
-    .watch-button:hover {
-      background: #00c0a0;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 10px 10px;
     }
-
-    @media (max-width: 600px) {
-      header {
-        font-size: 1.5rem;
-      }
+    .actions button {
+      background: #333;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .actions button:hover {
+      background: #444;
+    }
+    .hidden {
+      display: none !important;
     }
   </style>
+
+<style>
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  .video-card.dark-mode {
+    background-color: #1e1e1e;
+  }
+  #modeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #miniPlayer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 320px;
+    height: 180px;
+    background: black;
+    display: none;
+    z-index: 9998;
+  }
+  @media (max-width: 768px) {
+    .video-card {
+      width: 100%;
+    }
+    #miniPlayer {
+      width: 90vw;
+      height: 50vw;
+    }
+  }
+</style>
+
 </head>
 <body>
 
-  <header>WATCH OUR SHOW</header>
-
-  <div class="container">
-
-    <!-- TV Show Card Example -->
-    <div class="card">
-      <img src="https://i9.ytimg.com/vi/-hNwOPJhXqM/sddefault.jpg?v=6824664f&sqp=CNDckcEG&rs=AOn4CLDMiexSgjgBQyyXSUy8DDit2JGNWA" alt="TV Show Poster">
-      <div class="card-content">
-        <div class="card-title">STAGE TOONS EP 1 | FIRST EVER ANIMATED STAND-UP COMEDY SHOW</div>
-        <a href="https://www.youtube.com/watch?v=-hNwOPJhXqM" target="_blank" class="watch-button">WATCH NOW</a>
-      </div>
-    </div>
+<div id="miniPlayer"></div>
 
 
-    <!-- Add More TV Show Cards Below -->
-    <!-- Copy and paste the <div class="card">...</div> block -->
-
+<header>
+  <div class="logo">🎮 STAGE TOONS</div>
+  <div class="top-bar">
+    <input type="text" id="searchInput" placeholder="Search..." oninput="searchEpisodes()">
+    <select onchange="sortEpisodes(this.value)">
+      <option value="default">Sort</option>
+      <option value="latest">Latest</option>
+      <option value="likes">Most Liked</option>
+    </select>
   </div>
+    </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="Submit Your Content Here.html">Submit Your Content</a></li>
+        <li><a href="tvshow.html">Watch STAGE TOONS</a></li>
+  </ul>
+  <div class="burger" id="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</nav>
+
+</ul>
+        </nav>
+  
+</header>
+
+<div class="main">
+  <nav>
+    <ul>
+      <li onclick="filterEpisodes('all')">All</li>
+      <li onclick="filterEpisodes('watchLater')">Watch Later</li>
+      <li onclick="filterEpisodes('playlist')">Playlist</li>
+    </ul>
+  </nav>
+
+  <div class="container" id="episodeContainer">
+    <!-- Episodes rendered here -->
+  </div>
+</div>
+
+<script>
+const episodes = [
+  { id: "dQw4w9WgXcQ", title: "Episode 1 - Rise of the Gamer", date: "2023-01-01" },
+  { id: "9bZkp7q19f0", title: "Episode 2 - Game Over? Never!", date: "2023-02-15" },
+  { id: "eY52Zsg-KVI", title: "Episode 3 - Apex Legends Challenge", date: "2023-03-10" },
+  { id: "M7lc1UVf-VE", title: "Episode 4 - Secrets of Strategy", date: "2023-04-20" },
+  { id: "3fumBcKC6RE", title: "Episode 5 - Pro Tactics Reveal", date: "2023-05-30" },
+  { id: "RgKAFK5djSk", title: "Episode 6 - Battle Royale Breakdown", date: "2023-06-15" }
+];
+
+let filterMode = 'all';
+
+function getStorage(id) {
+  return {
+    likes: parseInt(localStorage.getItem("like_" + id) || "0"),
+    dislikes: parseInt(localStorage.getItem("dislike_" + id) || "0"),
+    watchLater: localStorage.getItem("watch_" + id) === "true",
+    playlist: localStorage.getItem("play_" + id) === "true"
+  };
+}
+
+function setStorage(id, key, value) {
+  localStorage.setItem(key + "_" + id, value);
+}
+
+function renderEpisodes() {
+  const container = document.getElementById("episodeContainer");
+  container.innerHTML = "";
+
+  const filtered = episodes.filter(ep => {
+    const { watchLater, playlist } = getStorage(ep.id);
+    if (filterMode === "watchLater") return watchLater;
+    if (filterMode === "playlist") return playlist;
+    return true;
+  });
+
+  filtered.forEach(ep => {
+    const state = getStorage(ep.id);
+    const epDiv = document.createElement("div");
+    epDiv.className = "episode";
+    epDiv.setAttribute("data-title", ep.title.toLowerCase());
+    epDiv.setAttribute("data-likes", state.likes);
+    epDiv.setAttribute("data-date", ep.date);
+    epDiv.innerHTML = `
+      <iframe src="https://www.youtube.com/embed/${ep.id}" allowfullscreen></iframe>
+      <div class="title">${ep.title}</div>
+      <div class="actions">
+        <button onclick="like('${ep.id}', this)">👍 <span>${state.likes}</span></button>
+        <button onclick="dislike('${ep.id}', this)">👎 <span>${state.dislikes}</span></button>
+        <button onclick="toggle('${ep.id}', 'watch', this)">🕒 ${state.watchLater ? "Saved" : "Watch Later"}</button>
+        <button onclick="toggle('${ep.id}', 'play', this)">📂 ${state.playlist ? "Added" : "Add to Playlist"}</button>
+      </div>
+    `;
+    container.appendChild(epDiv);
+  });
+}
+
+function like(id, btn) {
+  let count = parseInt(localStorage.getItem("like_" + id) || "0");
+  count++;
+  setStorage(id, "like", count);
+  btn.querySelector("span").textContent = count;
+}
+
+function dislike(id, btn) {
+  let count = parseInt(localStorage.getItem("dislike_" + id) || "0");
+  count++;
+  setStorage(id, "dislike", count);
+  btn.querySelector("span").textContent = count;
+}
+
+function toggle(id, type, btn) {
+  let current = localStorage.getItem(type + "_" + id) === "true";
+  localStorage.setItem(type + "_" + id, !current);
+  btn.textContent = type === "watch" ?
+    (!current ? "🕒 Saved" : "🕒 Watch Later") :
+    (!current ? "📂 Added" : "📂 Add to Playlist");
+  renderEpisodes();
+}
+
+function searchEpisodes() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const episodes = document.querySelectorAll(".episode");
+  episodes.forEach(ep => {
+    const title = ep.getAttribute("data-title");
+    ep.classList.toggle("hidden", !title.includes(query));
+  });
+}
+
+function sortEpisodes(type) {
+  const container = document.getElementById("episodeContainer");
+  const episodes = Array.from(container.children);
+  if (type === "latest") {
+    episodes.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+  } else if (type === "likes") {
+    episodes.sort((a, b) => b.dataset.likes - a.dataset.likes);
+  }
+  episodes.forEach(ep => container.appendChild(ep));
+}
+
+function filterEpisodes(mode) {
+  filterMode = mode;
+  renderEpisodes();
+}
+
+renderEpisodes();
+</script>
+
+
+<script>
+  // Dark mode toggle
+  document.getElementById('modeToggle').onclick = () => {
+    document.body.classList.toggle('dark-mode');
+    document.querySelectorAll('.video-card').forEach(card => {
+      card.classList.toggle('dark-mode');
+    });
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  };
+  // Load theme preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.querySelectorAll('.video-card').forEach(card => card.classList.add('dark-mode'));
+  }
+
+  // Floating mini-player
+  const miniPlayer = document.getElementById('miniPlayer');
+  const iframe = document.createElement('iframe');
+  iframe.width = "100%";
+  iframe.height = "100%";
+  iframe.frameBorder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+  miniPlayer.appendChild(iframe);
+
+  function openMiniPlayer(videoUrl) {
+    iframe.src = videoUrl;
+    miniPlayer.style.display = "block";
+  }
+
+  document.querySelectorAll('.video-card iframe').forEach(frame => {
+    frame.addEventListener('dblclick', () => {
+      openMiniPlayer(frame.src);
+    });
+  });
+</script>
 
 </body>
 </html>
-
